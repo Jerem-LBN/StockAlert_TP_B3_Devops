@@ -12,7 +12,7 @@ function test(desc, fn) {
   catch (e) { console.log(`  ❌ ${desc}\n     → ${e.message}`); failed++; }
 }
 
-function expect(val) {
+function expect(val) { //fonction d'assertion simple inspirée de Jest
   return {
     toBe: (exp) => { if (val !== exp) throw new Error(`Attendu "${exp}", reçu "${val}"`); },
     toEqual: (exp) => { if (JSON.stringify(val) !== JSON.stringify(exp)) throw new Error(`Attendu ${JSON.stringify(exp)}, reçu ${JSON.stringify(val)}`); },
