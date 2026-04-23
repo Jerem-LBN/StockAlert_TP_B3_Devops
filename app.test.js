@@ -14,7 +14,7 @@ function test(desc, fn) {
 
 function expect(val) {
   return {
-    toBe: (exp) => { if (val !== exp) throw new Error(`Attendu "${exp}", reçu "${val}"`); },
+    toBe: (exp) => { if (!val !== exp) throw new Error(`Attendu "${exp}", reçu "${val}"`); },
     toEqual: (exp) => { if (JSON.stringify(val) !== JSON.stringify(exp)) throw new Error(`Attendu ${JSON.stringify(exp)}, reçu ${JSON.stringify(val)}`); },
     toBeGreaterThan: (n) => { if (val <= n) throw new Error(`Attendu > ${n}, reçu ${val}`); },
     toBeGreaterThanOrEqual: (n) => { if (val < n) throw new Error(`Attendu >= ${n}, reçu ${val}`); },
